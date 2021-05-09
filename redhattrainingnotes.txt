@@ -1,0 +1,2400 @@
+Controller Node
+
+Runs all openstack services
+
+services of controller: 
+horizon - dashboard ui
+nova - is used for managing the reseouces in virtualised environment
+neutron - for networking
+keystone - identity service - authorisation authentication, repository of users and permissions
+glance - image service - provides images to openstack - cirros, fedora, ubuntu
+cinder - block storage- virtual storage service
+swift - object storage- store and retrieve data in cloud, unstructurd data
+heat - orchestration purpose- allow devs to store the cloud app as a file
+manila- shared file system - 
+
+
+--------
+
+rabbit mq - messaging service between different services of controlloer
+
+keystone service workflow
+--------
+
+glance services 
+
+api:
+--->> openstack-glance-api service
+--->> handles requests and delivers the image information
+
+registery:
+-->> openstack-glance-registery service manages metadata associted with the image
+-->> sql db required 
+
+image service workflow
+
+---------
+
+cinder
+
+----
+every architecture explained 
+
+----**----
+
+
+hypervisor, virtual machine
+
+
+------
+
+
+
+1008  # how to create database container
+ 1009  docker pull mysql
+ 1010  docker images
+ 1011  docker run -it -d --name vadapav -e MYSQL_ROOT_PASSWORD=123 docker.io/mysql:latest
+ 1012  docker ps
+ 1013  docker exec -it vadapav bash
+ 1014  docker ps
+ 1015  history
+ 1016  docker commit vadapav
+ 1017  docker images
+ 1018  docker tag fb6a1d169cd5 mydb1:latest
+ 1019  docker images
+ 1020  docker run -it -d --name vadapav1 -e MYSQL_ROOT_PASSWORD=123 mydb1:latest
+ 1021  docker ps
+ 1022  docker exec -it vadapav1 bash
+ 1023  docker ps
+ 1024  docker exec -it vadapav1 bash
+ 1025  history
+
+
+
+-------------------
+
+
+    1  ifconfig enp0s8 192.168.0.10 netmask 255.255.255.0
+    2  ifconfig
+    3  yum install net-tools
+    4  ifconfig
+    5  ifup enp0s8
+    6  ip a
+    7  history
+    8  ls /etc
+    9  ls etc/yum.repos.d
+   10  nmtui
+   11  ifconfig enp0s8
+   12  nmtui
+   13  ifconfig enp0s8
+   14  nmtui
+   15  hostname
+   16  hostnamectl set-hostname aditya
+   17  hostname
+   18  exec bash
+   19  localhost
+   20  hostnamectl set-hostname localhost
+   21  hostname
+   22  exec bash
+   23  yum install git
+   24  git config --global user.name "Aditya"
+   25  git config --global user.email "aditya.verma998@gmail.com"
+   26  git config --list
+   27  mkdir gitdir
+   28  cd gitdir
+   29  touch helloworld.txt
+   30  cat helloworld.txt
+   31  vim helloworld.txt
+   32  git init
+   33  git remote add origin https://github.com/adityaverma998/redhattraining.git
+   34  git add .
+   35  git status
+   36  git commit -m "first commit"
+   37  git statud
+   38  git status
+   39  git push origin master
+   40  git log
+   41  git status
+   42  git show 48c7d6fcdd9743240fa834ec1bda7478609d9848
+   43  git branch
+   44  git branch newbranch
+   45  git branch
+   46  git checkout newbranch
+   47  git checkout master
+   48  git -d newbranch
+   49  git merge newbranch
+   50  yum update -y
+   51  yum install -y yum-utils device-mapper-persistent-data lvm2
+   52  systemctl start docker
+   53  docker images
+   54  nmcli c s
+   55  nmtli
+   56  nmtui
+   57  nmcli c s
+   58  nmtui en0s3
+   59  docker login
+   60  nmtui
+   61  ping google.com
+   62  docker login
+   63  docker push veda
+   64  docker tag veda adityaverma998/veda
+   65  docker images
+   66  docker push adityaverma998/veda
+   67  docker push adityaverma998/veda docker.io/veda
+   68  docker tag adityaverma998/veda docker.io/veda
+   69  docker tag adityaverma998/veda docker.io/adityaverma998/veda
+   70  docker push docker.io/adityaverma998/veda
+   71  history
+   72  docker images
+   73  history
+   74  systemctl status docker
+   75  systemctl stop docker
+   76  systemctl status docker
+   77  systemctl start docker
+   78  docker images
+   79  docker run -it --name concentos centos sh
+   80  docker ps
+   81  docker commit concentos
+   82  docker login
+   83  docker ps
+   84  docker images
+   85  docker tag c711c9a493f5 adityaverma998/centosimg
+   86  docker push adityaverma998/centosimg
+   87  history
+   88  init 0
+
+
+
+
+   89  systemctl start docker
+   90  docker ps
+   91  docker pull mysql
+   92  docker images
+   93  docker run -it -d --name vadapav -e MYSQL_ROOT_PASSWORD=123 docker.io/mysql
+   94  docerk ps
+   95  docker ps
+   96  docker exec -it vadapav bash
+   97  docker ps
+   98  docker images
+   99  docker ps -a
+  100  docker ps
+  101  docker commit vadapav
+  102  docker images
+  103  docker tag ed47905f0504 mydb1:latest
+  104  docker images
+  105  docker run -it -d --name vadapav1 -e MYSQL_ROOT_PASSWORD=123 mydb1:latest
+  106  docker ps
+  107  docker exec -it vadapav1 bash
+
+
+
+mysql -u root -p                
+
+
+
+
+  108  docker exec -it vadapav bash
+  109  docker images
+  110  docker ps
+  111  docker stop vadapav1
+  112  docker ps
+  113  docker rm vadapav1
+  114  docker images
+  115  docker run -it -d --name vadapav1 -e MYSQL_ROOT_PASSWORD=123 docker.io/mydb1
+  116  docker run -it -d --name vadapav1 -e MYSQL_ROOT_PASSWORD=123 mydb1
+  117  docker ps
+  118  docker exec -it vadapav1 bash
+  119  docker ps
+  120  docker commit vadapav
+  121  docker images
+  122  docker tag 1aeda3fb46a2 db1
+  123  docker images
+  124  docker run -it -d --name vada -e MYSQL_ROOT_PASSWORD=123 db1
+  125  docker ps
+  126  docker stop vadapav1
+  127  docker rm vadapav1
+  128  docker ps
+  129  docker exec -it vada bash
+  130  ls
+
+
+
+
+  131  docker status
+  132  systemstl status docker
+  133  systemctl start docker
+  134  docker ps
+  135  clear
+  136  docker ps
+  137  docker inspect db1
+  138  docker inspect db1 | grep -i ipadd
+  139  docker inspect vada | grep -i ipadd
+  140  docker inspect vadapav | grep -i ipadd
+  141  clear
+  142  docker inspect vadapav | grep -i ipadd
+  143  curl 172.17.0.2
+  144  docker run -it --name web1 -p 8080:80 nginx
+  145  docker run -it -d --name web1 -p 8080:80 nginx
+  146  docker run -it -d --name web2 -p 8080:80 nginx
+  147  docker inspect web2 | grep -i ipadd
+  148  docker exec -it web2 bash
+  149  curl 172.17.0.3
+  150  ifconfig
+  151   192.168.1.7 192.168.1.7
+  152  docker exec -it web2 bash
+
+  153  docker rm -f $(docker ps -a -q)
+  154  docker rmi -f $(docker images -a -q)
+
+  155  docker images
+  156  docker ps
+
+
+
+----- volume docker ---- 
+
+
+  157  mkdir /idli
+  158  cd /idli/
+  159  ls
+  160  cat index.html
+  161  cat >  index.html
+  162  ls
+  163  docker run -it -d --name web1 -p 8080:80 -v /idli:/usr/share/nginx/html nginx          
+  164  docker ps
+  165  setenforce 0
+  166  ls
+  167  cat > index.html
+  168  #filezilla
+  169  docker run -it -d --name web1 -p 8081:80 -v /idli:/usr/share/nginx/html nginx
+  170  docker run -it -d --name web2 -p 8081:80 -v /idli:/usr/share/nginx/html nginx
+  171   docker run -it -d --name web2 -p 8081:80 -v /idli:/usr/share/nginx/html nginx
+  172  history
+  173  ls
+
+
+  174  #above code for creating volume and using two ports to access same content
+  175  #volume mapping , port mapping done
+
+
+  176  #docker networking from here
+  177  #docker networking from here
+
+  178  ip a s
+  179  ip a s
+  180  yum install brige-utils -y
+  181  yum install bridge-utils -y
+  182  brctl show
+  183  ip a s
+  184  docker network ls
+  185  docker network create --subnet 19.19.0.0/24 mynet1                 
+  186  docker network ls
+  187  docker run -it -d --name web5 -p 8085:80 --network mynet1 -v /idli:/usr/share/nginx/html nginx
+
+
+docker run -it -d --name v2 -p 9105:80 --network subnet1 --ip 20.20.0.5 -v /idli:/usr/share/nginx/html nginx
+
+
+  188  brctl show
+  189  docker ps
+  190  docker inspect web5 | grep -i ipadd
+  191  brctl show
+  192  docker run -it -d --name web7 -p 8089:80 --network mynet1 --cpus="0.000001" --memory=100M -v /idli:/usr/share/nginx/html nginx
+  193  docker ps
+  194  docker inspect web7 | less
+  195  #1097  docker exec web10 hostname
+  196   1098  docker exec web10 date
+  197   1099  docker exec web10 ls
+  198   1100  docker exec web10 cat /etc/os-release
+  199  history
+  200  clear
+
+
+----- docker file ------ 
+
+  201  mkdir /dockers
+  202  cd /dockers/
+  203  ls
+  204  touch 1.df
+  205  vi 1.df
+
+
+
+FROM centos:7
+LABEL "APP"="Prod"
+MAINTAINER "IBM@IBM.COM"
+
+RUN yum install httpd -y
+RUN systemctl enable httpd
+EXPOSE 80
+CMD ["httpd","-D","FOREGROUND"]
+
+
+
+  206  docker build . -f 1.df -t myweb1:v1
+  207  vi 1.df
+  208  docker build . -f 1.df -t myweb1:v1
+  209  docker images
+  210  docker run -it -d --name myweb11 -v /idli:/var/www/html:Z -p 9091:80 myweb1
+  211  docker images
+  212  docker tag 4e44c94b25fc adityaverma998/ibm:myweb
+  213  docker images
+  214  docker push adityaverma998/ibm:myweb
+  215  history
+  216  vi 1.df
+  217  history
+
+
+------------------------------------------------
+
+
+backend frontend containers and connecting them
+
+
+ cd /dockers/
+ 1002  ls 1/df
+ 1003  touch frontend.df
+ 1004  vi frontend.df
+
+
+FROM centos:7
+MAINTAINER "veda@ibm"
+LABEL "App"=" Devlopemnt"
+RUN yum install httpd -y
+RUN yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm -y
+RUN yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm -y
+RUN yum install yum-utils -y
+RUN yum-config-manager --enable remi-php72 -y
+RUN yum install php php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo -y
+EXPOSE 80
+RUN systemctl enable httpd
+CMD ["httpd", "-D", "FOREGROUND"]
+
+
+
+ 1005  #docker build . -f frontend.df -t ibmfrontend:v1
+ 1006  vi frontend.df
+ 1007  docker build . -f frontend.df -t ibmfrontend:v1
+ 1008  ls
+ 1009  touch index.html
+ 1010  echo "page">index.html
+ 1011  echo "page">index.php
+ 1012  ls
+ 1013  docker run -it -d --name frontend -p 8080:80 -v /dockers:/var/www/html ibmfrontend:v1        ----- here question 
+ 1014  rm -fr index.html
+ 1015  docker rm -f frontend
+ 1016  docker run -it -d --name frontend -p 8080:80 -v /dockers:/var/www/html:Z ibmfrontend:v1       ---- this step required?
+ 1017  vi frontend.df
+
+
+ 1018  #1. ubuntu -- /usr/share/local/apache2
+ 1019  2. centos/redhatlinux -- /var/www/html
+ 1020  3. nginx -- /usr/share/nginx/html
+
+
+ 1021  ls
+ 1022  touch backend.df
+ 1023  touch createtable.sql
+ 1024  touch insertvalues.sql
+ 1025  ls
+ 1026  vi createtable.sql
+ 1027  vi insertvalues.sql
+ 1028  vi backend.df
+
+
+FROM mysql
+ENV MYSQL_DATABASE priar
+COPY ./createtable.sql /docker-entrypoint-initdb.d/
+COPY ./insertvalues.sql /docker-entrypoint-initdb.d/
+
+
+
+ 1029  docker build . -f backend.df -t ibmbackend:v1
+ 1030  docker run -it -d --name ibmbackendcon -e MYSQL_PASSWORD_ROOT=123 -v /dockers:/var/www/html ibmbackend:v1
+ 1031  docker ps
+ 1032  docker rm -f ibmbackend
+ 1033  docker start ibmbackend
+ 1034  docker run -it -d --name ibmbackendcon -e MYSQL_ROOT_PASSWORD=123 -v /dockers:/var/www/html ibmbackend:v1
+ 1035  docker run -it -d --name ibmbackendcontainer -e MYSQL_ROOT_PASSWORD=123 -v /dockers:/var/www/html ibmbackend:v1
+ 1036  docker ps
+ 1037  vi insertvalues.sql
+ 1038  docker exec -it ibmbackendcontainer bash
+ 1039  ls
+ 1040  docker ps
+ 1041  docker inspect ibmfrontend | grep -i ipadd
+ 1042  docker inspect ibmfrontend:v1 | grep -i ipadd
+ 1043  docker inspect ibmfrontend:v1 | grep -i ipa
+ 1044  docker inspect ibmfrontend:v1 | grep -i ipadd
+ 1045  pwd
+ 1046  docker ps -a
+ 1047  history
+ 1048  ls
+ 1049  vi frontend.df
+ 1050  docker inspect backend | grep -i ipadd
+ 1051  docker inspect ibmbackend | grep -i ipadd
+ 1052  docker inspect ibmbackend:v1 | grep -i ipadd
+ 1053  ls
+ 1054  vi index.php
+ 1055  docker exec -it ibmbackend bash
+ 1056  mysql -u root -p
+ 1057  docker ps
+ 1058  docker exec -it ibmbackend:v1 bash
+ 1059  docker exec -it ibmbackendcontainer bash
+ 1060  docker inspect ibmbackendcontainer | grep -i ipadd
+ 1061  vi index.php
+
+
+
+inside index.php--------------->>>>>>>>>>>>>>>
+
+
+
+ <?php
+$servername = "localhost-172.17.1.17";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT id, firstname, lastname FROM MyGuests";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+    echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+  }
+} else {
+  echo "0 results";
+}
+$conn->close();
+?> 
+
+
+
+
+inside backend mysql -------->>>>>>>>>
+
+
+alter user 'root'@'localhost' identified with mysql_native_password by '123';
+alter user 'root'@'%' identified with mysql_native_password by '123';
+
+
+
+
+ 1062  history
+
+
+
+
+
+
+
+------------------------------------
+
+sir kubernetes steps file
+
+---
+
+
+
+From Step 1 to step 6 : Perform on all nodes
+Step 7 and 8 on : Perform on only master
+Step 9: on Workers only
+
+** Disable SELINUX , Firewall and swap <<<< --- <<< ---
+
+Step1 :
+yum install docker* -y
+systemctl enable docker 
+systemctl start docker 
+
+Step2:
+vi /etc/sysctl.d/k8s.conf
+
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+
+Step3
+sysctl --system
+
+Step4 
+vi /etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-\$basearch
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+exclude=kubelet kubeadm kubectl
+and save the file
+
+Step 5
+yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
+
+Step 6
+systemctl enable --now kubelet
+And the master Node
+
+Step 7 
+kubeadm init
+============================================
+
+Step 8: use Normal user 
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+Step 9 : Fire on both worker nodes
+kubeadm join 192.168.0.103:6443 --token ypbbw2.1urmxeg6si4sw20f \
+    --discovery-token-ca-cert-hash sha256:4936ed3a49ebc7ede3ce427c8a70fca92ffecb62f59aaed4911d1e81c53bbf64
+===========================================================================
+on master node with normal user
+kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
+
+
+
+-----------------------------------------
+
+
+
+
+
+
+local machine ---
+     ...
+
+
+
+
+
+
+
+
+
+
+inside masters vm-----
+
+1  docker ps
+    2  cat <<EOF > /etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+EOF
+
+    3  yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
+    4  systemctl enable --now kubelet
+    5  cat <<EOF >  /etc/sysctl.d/k8s.conf
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+EOF
+
+    6  sysctl --system
+    7  lsmod | grep br_netfilter
+    8  systemctl daemon-reload
+    9  systemctl restart kubelet
+   10  kubeadm init --apiserver-advertise-address=
+   11  ip a s
+   12  kubeadm init --apiserver-advertise-address=192.168.1.50
+   13   mkdir -p $HOME/.kube
+   14    sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+   15    sudo chown $(id -u):$(id -g) $HOME/.kube/config
+   16  kubectl get nodes
+   17  kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
+   18  kubectl get nodes
+   19  kubectl get pods -n kube-system
+   20  history
+
+
+
+
+inside worker 1 & worker 2 ---------
+
+
+ 1  docker ps
+    2  cat <<EOF > /etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+EOF
+
+    3  yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
+    4  systemctl enable --now kubelet
+    5  cat <<EOF >  /etc/sysctl.d/k8s.conf
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+EOF
+
+    6  sysctl --system
+    7  lsmod | grep br_netfilter
+    8  systemctl daemon-reload
+    9  systemctl restart kubelet
+   10  kubeadm join 192.168.1.50:6443 --token 9d96qx.8xzvvb3r03tl1vq1         --discovery-token-ca-cert-hash sha256:939a115301f368190ddfbaaf81ba8a3475f71645abc05cfa50df633ea0a4c6aa
+   11  history
+
+
+
+------------------------ vigneshwarn sol making cloud ------------
+
+
+ 3  yum install docker* -y
+    4  systemctl enable docker
+    5  systemctl start docker
+    6  docker ps
+    7  vi /etc/selinux/config
+    8  getenforce
+    9  vi /etc/selinux/config
+   10  setenforce 0
+   11  getenforce
+   12  swapoff -a
+   13  ip a s
+   14  hostnamectl set-hostname master
+   15  bash
+   16  docker ps
+   17  lscpu
+   18  cat <<EOF > /etc/yum.repos.d/kubernetes.repo
+   19  [kubernetes]
+   20  name=Kubernetes
+   21  baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+   22  enabled=1
+   23  gpgcheck=1
+   24  repo_gpgcheck=1
+   25  gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+   26  EOF
+   27  yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
+   28  systemctl enable --now kubelet
+   29  cat <<EOF > /etc/sysctl.d/k8s.conf
+   30  net.bridge.bridge-nf-call-ip6tables = 1
+   31  net.bridge.bridge-nf-call-iptables = 1
+   32  EOF
+   33  sysctl --system
+   34  lsmod | grep br_netfilter
+   35  systemctl daemon-reload
+   36  kubeadm init
+   37  kubectl get nodes
+   38  mkdir -p $HOME/.kube
+   39    sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+   40    sudo chown $(id -u):$(id -g) $HOME/.kube/config
+   41  kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
+   42  kubectl get nodes
+
+ADITYA VERMA  10:31 PM
+cat <<EOF > /etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+EOF
+10:34
+cat <<EOF >  /etc/sysctl.d/k8s.conf
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+EOF
+New
+
+Shubham Singh  10:40 PM
+kubeadm join 172.31.45.161:6443 --token gokqgi.5zjceo1zalsl6t7o \
+        --discovery-token-ca-cert-hash sha256:114df270aaccb93b175c7c3ff2bfe85746c6c71247ecb6656de630a3892ab828
+
+
+
+----------------
+
+inside worker nodes,
+
+kubelet, kube-proxy
+kube-dns, cadvisor, container engine
+
+----
+
+inside master node,
+
+api-server, kube-scheduler, etcd, 
+controller--deployment-replica sets,
+self healing,
+container engine, kubelet, kubeproxy,kubedns,cadvisor
+cloud controller
+
+
+
+Your Kubernetes control-plane has initialized successfully!
+To start using your cluster, you need to run the following as a regular user:
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+Alternatively, if you are the root user, you can run:
+  export KUBECONFIG=/etc/kubernetes/admin.conf
+You should now deploy a pod network to the cluster.
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+Then you can join any number of worker nodes by running the following on each as root:
+kubeadm join 192.168.1.11:6443 --token dvluwo.ab9x3bowg0o2ttpt \
+        --discovery-token-ca-cert-hash sha256:1b471a99bfaf02eb27be3398d18681c4a4a5fc54e553f82b9518c3418a2dea53
+# clean up master node 
+18:00
+Ramesh SS KHARAT to Everyone
+# kubeadm reset 
+18:00
+Ramesh SS KHARAT to Everyone
+# rm -fr /root/.kube
+kubeadm init --apiserver-advertise-address=
+7208033455
+    1  hostname
+    2  systemctl enable docker
+    3  systemctl start docker
+    4  docker ps
+    5  vi /etc/selinux/config
+    6  setenforce 0
+    7  systemctl stop firewalld
+    8  systemctl disable firewalld
+    9  vi /etc/fstab
+   10  swapoff -a
+   11  nmcli
+   12  nmcli s
+   13  nmcli c s
+   14  yum install docker
+   15  yum install -y yum-utils device-mapper-persistent-data lvm2
+   16  yum-config-manager --add-repo https://download.docker.com/linux/centos/do                                                                             cker-ce.repo
+   17  yum install docker
+   18  hostnamectl set-hostname master
+   19  bash
+   20  ls
+   21  nmcli connection up enp0s3
+   22  cat <<EOF > /etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cl                                                                             oud.google.com/yum/doc/rpm-package-key.gpg
+EOF
+   23  yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
+   24  systemctl enable --now kubelete
+   25  systemctl enable --now kubelet
+   26  cat <<EOF >  /etc/sysctl.d/k8s.conf
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+EOF
+   27  sysctl --system
+   28  lsmod | grep br_netfilter
+   29  systemctl daemon-reload
+   30  systemctl restart kubelet
+   31  ip a s
+   32  kubeadm init --apiserver-advertise-address=
+   33  kubeadm init --apiserver-advertise-address=192.168.1.11
+   34  Your Kubernetes control-plane has initialized successfully!
+   35  To start using your cluster, you need to run the following as a regular u                                                                             ser:
+   36    mkdir -p $HOME/.kube
+   37    sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+   38    sudo chown $(id -u):$(id -g) $HOME/.kube/config
+   39  Alternatively, if you are the root user, you can run:
+   40    export KUBECONFIG=/etc/kubernetes/admin.conf
+   41  You should now deploy a pod network to the cluster.
+   42  Run "kubectl apply -f [podnetwork].yaml" with one of the options listed a                                                                             t:
+   43    https://kubernetes.io/docs/concepts/cluster-administration/addons/
+   44  Then you can join any number of worker nodes by running the following on                                                                              each as root:
+   45  kubeadm join 192.168.1.11:6443 --token dvluwo.ab9x3bowg0o2ttpt         --                                                                             discovery-token-ca-cert-hash sha256:1b471a99bfaf02eb27be3398d18681c4a4a5fc54e553                                                                             f82b9518c3418a2dea53
+   46   mkdir -p $HOME/.kube
+   47    sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+   48  kubectl get nodes
+   49  kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl                                                                              version | base64 | tr -d '\n')"
+   50  kubectl get nodes
+   51  watch kubectl get nodes
+   52  kubectl get nodes
+   53  kubectl get pods -n kube-system
+   54  ping google.com
+   55  kubectl get pods -n kube-system -o wide
+   56  kubectl delete -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubect                                                                             l version | base64 | tr -d '\n')"
+   57  kubectl get pods -n kube-system
+   58  kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl                                                                              version | base64 | tr -d '\n')"
+   59  # kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubec                                                                             tl version | base64 | tr -d '\n')"
+   60  kubectl get pods -n kube-system
+   61  watch kubectl get pods -n kube-system
+   62  kubectl delete -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubect                                                                             l version | base64 | tr -d '\n')"
+   63   kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubect                                                                             l version | base64 | tr -d '\n')"
+   64  watch kubectl get pods -n kube-system
+   65  history
+2100  clear
+ 2101  kubectl create app2 --image=httpd
+ 2102  kubectl create deployment app2 --image=httpd
+ 2103  kubectl get pods -o wide
+ 2104  kubectl delete deployment app1 d1
+ 2105  kubectl get pods -o wide
+ 2106  kubectl delete pod pod2 samosa
+ 2107  kubectl get pods
+ 2108  kubectl scale deployment app2 --replicas=3
+ 2109  kubectl get pods
+ 2110  kubectl get pods -o wide
+ 2111  curl 10.32.0.10
+ 2112  curl 10.32.0.4
+ 2113  curl 10.40.0.6
+ 2114  clear
+ 2115  kubectl get service
+ 2116  kubectl delete svc app1
+ 2117  kubectl expose deployment/app2 --type=ClusterIP --port=80
+ 2118  kubectl get service
+ 2119  curl 10.106.248.180
+ 2120  kubectl get pods
+ 2121  kubectl get pods -o wide
+ 2122  kubectl delete pod app2-c4466cbcd-rmf9x
+ 2123  kubectl get pods -o wide
+ 2124  curl 10.106.248.180
+ 2125  history
+kubectl scale deployment/app3 --replicas=4
+kubectl --record deployment.apps/app3 set image deployment.v1.apps/app3 k8s-rollaback-fd9qr=kharatramesh/k8s_rollaback:webv2.0
+kubectl get pods -o wide
+kubectl describe deployment/app3
+kubectl --record deployment.apps/app3 set image deployment.v1.apps/app3 k8s-rollaback-fd9qr=kharatramesh/k8s_rollaback:webv3.0
+kubectl --record deployment.apps/app3 set image deployment.v1.apps/app3 k8s-rollaback-fd9qr=kharatramesh/k8s_rollaback:webv4.0
+kubectl rollout history
+kubectl rollout history deployment/app3
+kubectl rollout undo deployment/app3 --to-revision=2
+kubectl rollout undo deployment/app3 --to-revision=1
+kubectl rollout history deployment/app3
+kubectl rollout undo deployment/app3 --to-revision=4
+kubectl rollout history deployment/app3
+history
+doskey /history
+15:49
+Abhishek Sharma to Everyone
+getting error in image pulling
+15:51
+Me to Everyone
+yes
+15:51
+Laribok Syiemlieh to Everyone
+yes
+15:51
+Abhishek Sharma to Everyone
+webv1.0 i have given
+15:51
+ADITYA VERMA to Everyone
+[root@master ~]# kubectl --record deployment.apps/mohit set image deployment.v1.apps/mohit k8s-rollaback-fd9qr=kharatramesh/k8s_rollaback:webv2.0
+error: unable to find container named "k8s-rollaback-fd9qr"
+error: unable to find container named "k8s-rollaback-fd9qr"
+[root@master ~]#
+
+
+
+--------veda ----------------------------------------
+
+
+----------------------------------POD-------------------
+ 50  kubectl get nodes
+   51  kubectl get nodes -o wide
+   *52  kubectl run pod1 --image=httpd
+   53  kubectl get pods -o wide
+   54  curl 10.44.0.1
+   55  kubectl run pod2 --image=inginx
+   56  kubectl get pods -o wide
+   57  kubectl delete pod pod2
+   58  kubectl get pods -o wide
+   59  clear
+----using yaml----
+   60  mkdir /ibm
+   61  cd /ibm
+   62  ls
+   63  vi mypod.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: idli
+  labels:
+    dish: vadapav
+  annotations:
+    refimage: nginxv1.0
+spec:
+  containers:
+  - name: c1
+    image: nginx
+    ports:
+    - containerPort: 80
+   64  kubectl create -f mypod.yaml
+   65  kubectl get pods -o wide
+   67  kubectl explain pod
+ 75  vi mypod2.yaml
+   76  kubectl create -f mypod2.yaml
+   77  vi mypod2.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: samosa
+spec:
+  containers:
+  - name: c2
+    image: httpd
+   78  kubectl create -f mypod2.yaml
+   79  kubectl get pods -o wide
+-------editing pods---
+ vi mypod2.yaml
+   84  kubectl apply -f mypod2.yaml
+   85  kubectl get pods -o wide
+   86  curl 10.44.0.2
+---------scaling up and down---> DEPLOYMENT--------------------------
+  1. kubectl create deployment app1 --image=httpd
+ 98  kubectl get rs
+   99  kubectl scale deployment/app1 --replicas=4
+  100  kubectl get rs  ----> replicaSet
+  101  kubectl get pods -o wide
+  102  kubectl scale deployment/app1 --replicas=2
+  103  kubectl get rs
+  104  kubectl get pods -o wide
+  105  clear
+  107  kubectl scale deployment/app1 --replicas=0
+  108  kubectl get pods -o wide
+  109  kubectl scale deployment/app1 --replicas=3
+  110  kubectl get pods -o wide
+  111  clear
+  //112  kubectl delete deployment app1
+-----declarative way (using yaml)-----
+  106  kubectl explain Deployment ---> to get apiVersion details
+  *112  vi d1.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: d1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      dish: samosa
+  template:
+    metadata:
+      labels:
+        dish: samosa
+    spec:
+      containers:
+      - name: c1
+        image: vedasamhitha/myweb1
+  113  kubectl apply -f d1.yaml
+--------------------
+-------------------------NodePort-----------------------
+--------------------------------------------------------
+-------------------------ClusterIP---------------------
+-------------------------------------------------------
+-------------------------LoadBalancer------------------
+k8s-rollaback-r2x48
+   63  kubectl create deployment app3 --image=httpd
+   64  kubectl scale deployment app3 --replicas=3
+   65  kubectl get pods
+   *66  kubectl expose deployment/app3 --type=LoadBalancer --port=80
+   67  kubectl get services
+   68  clear
+   69  kubectl get services
+   /* 70  kubectl create deployment app4 --image=docker.io/kharatramesh
+   71  /
+   72  k8s_rollaback
+   73  clear
+   74  kubectl get deployment
+   75  kubectl delete deployment app4
+   76  kubectl get deployment
+   77  clear
+   78  kubectl create deployment app4 --image=docker.io/kharatramesh/k8s_rollaback:web1.0
+   79  kubectl get deployment
+   80  kubectl get pods*/
+-----------------------------------Rollout and version updation-----------------------------------------------------------------------
+   81  kubectl create deployment app5 --image=docker.io/kharatramesh/k8s_rollaback:webv1.0
+   82  kubectl get pods
+   83  clear
+   84  kubectl scale deployment/app5 --replicas=4
+   85  kubectl expose deployment/app5 --type=NodePort --port=80
+   86  kubectl get services
+   87  kubectl describe deployment/app5 ----> to get container deatils
+   *91  kubectl --record deployment.apps/app5 set image deployment.v1.apps/app5 k8s-rollaback-r2x48=kharatramesh/k8s_rollaback:webv2.0 ---> Increases v1 to v2
+   92  kubectl get pods -o wide
+   93  kubectl --record deployment.apps/app5 set image deployment.v1.apps/app5 k8s-rollaback-r2x48=kharatramesh/k8s_rollaback:webv3.0  ----> v2 to v3
+   94  kubectl --record deployment.apps/app5 set image deployment.v1.apps/app5 k8s-rollaback-r2x48=kharatramesh/k8s_rollaback:webv4.0-----> v3 to v4
+   //95  kubectl rollout history
+   //96  kubectl rollout history deployment/app3
+   *97  kubectl rollout history deployment/app5
+   *98  kubectl rollout undo deployment/app5 --to-revision=2 ----> v4 to v2
+   99  kubectl rollout history deployment/app5
+  100  kubectl rollout undo deployment/app5 --to-revision=4 ----->v2 to v4
+--------------------------Volume Mapping---------
+ 108  cd /
+  109  ls
+  110  mkdir volume
+  111  ls
+  112  cd volume
+  113  touch vol1.yaml
+  114  ls
+  115  vi vol1.yaml  ----> emptyDir
+apiVersion: v1
+kind: Pod
+metadata:
+  name: p1
+spec:
+  containers:
+  - name: c1
+    image: nginx
+    volumeMounts:
+    - name: v1
+      mountPath: /vadapav
+  volumes:
+  - name: v1
+    emptyDir: {}
+  /* 116  kubectl apply vol1.yaml
+  117  kubectl apply -f vol1.yaml
+  118  vi vol1.yaml
+  119  kubectl apply -f vol1.yaml
+  120  clear
+  121  kubectl apply -f vol1.yaml */
+  122  kubectl create -f vol1.yaml
+  123  kubectl get pods
+  124  vi vol1.yaml
+  125  kubectl apply -f vol1.yaml
+  126  kubectl get pods
+  127  clear
+  128  kubectl get pods
+  129  clear
+  130  touch vol2.yaml
+  131  vi vol2.yaml ------->hostPath
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod4
+spec:
+  containers:
+  - name: c4
+    image: nginx
+    volumeMounts:
+    - name: v4
+      mountPath: /usr/share/nginx/html
+    - name: v5
+      mountPath: /gulabjamun
+  volumes:
+  - name: v4
+    hostPath:
+      path: /samosa
+      type: DirectoryOrCreate
+  - name: v5
+    hostPath:
+      path: /sweets
+      type: DirectoryOrCreate
+  132  kubectl apply -f vol2.yaml
+  133  kubectl get pods
+  134  kubectl exec -it pod4 bash
+  135  kubectl label pod pod4 "app=prod"
+  136  kubectl expose pod pod4 --type=NodePort --port=80
+  138  kubectl get service
+
+
+
+----------------------------------------------------------------
+
+
+cluster ip -- within pod
+loadbalencer -- for client -- share external ip
+nodeport -- share worker ip
+
+
+---------
+
+pvc - persistent volume claim
+
+5gb out of 100 gb -> cunk of storage of persistent volume
+
+
+
+
+ 1  hostnamectl set-hostname master
+    2  vi /etc/selinux/config
+    3  getenforce
+    4  setenforce 0
+    5  getenforce
+    6  swapoff -a
+    7  lscpu
+    8  cat <<EOF > /etc/yum.repos.d/kubernetes.repo
+    9  [kubernetes]
+   10  name=Kubernetes
+   11  baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+   12  enabled=1
+   13  gpgcheck=1
+   14  repo_gpgcheck=1
+   15  gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+   16  EOF
+   17  yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
+   18  cat <<EOF >  /etc/sysctl.d/k8s.conf
+   19  net.bridge.bridge-nf-call-ip6tables = 1
+   20  net.bridge.bridge-nf-call-iptables = 1
+   21  EOF
+   22  sysctl --system
+   23  lsmod | grep br_netfilter
+   24  systemctl daemon-reload
+   25  kubeadm init
+   26  systemctl enable --now kubelet
+   27  kubeadm init
+   28  vi /etc/hostname
+   29  kubeadm init
+   30  systemctl start docker.service-
+   31  systemctl start docker.service
+   32  systemctl start docker
+   33  systemctl start docker.service
+   34  yum install docker* -y
+   35  systemctl enable docker
+   36  systemctl start docker
+   37  kubeadm init
+   38  kubectl get nodes
+   39  kubeadm init
+   40  mkdir -p $HOME/.kube
+   41    sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+   42    sudo chown $(id -u):$(id -g) $HOME/.kube/config
+   43  kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
+   44  kubectl get nodes
+   45   kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
+   46  kubectl get nodes
+   47  kubeadm join 172.31.3.99:6443 --token bmfbcz.czhbt6o7aghb0uff \
+   48  kubectl get nodes
+   49  watch kubectl get nodes
+   50  kubectl get nodes
+   51  hostnamectl set-hostname master
+   52  bash
+   53  systemctl start docker
+
+
+
+
+
+
+
+
+
+   54  yum install nfs* -y
+   55  systemctl enable nfs
+   56  systemctl enable nfs-server
+   57  systemctl start nfs-server
+   58  ls -l /etc/exports
+   59  vi /etc/exports
+
+/ibm_data *(rw,sync)
+
+
+   60  chmod 777 /ibm_data/
+   61  systemctl restart nfs-server
+   62  exportfs -av
+   63  yum install nfs-utils -y
+   64  ls /ibm_data/
+   65  ls /ibm_data
+   66  cd /ibm_data
+   67  ls
+   68  cat pv1.yaml
+   69  apiVersion: v1
+   70  kind: PersistentVolume
+   71  metadata:
+   72    name: pv1
+   73  spec:
+   74    capacity:
+   75      storage: 4Gi
+   76    accessModes:
+   77    - ReadWriteMany
+   78    persistentVolumeReclaimPolicy: Retain
+   79    nfs:
+   80      path: /ibm_data
+   81      server: 40.121.160.151
+   82  clear
+   83  vi pv1.yaml
+   84  vi pvc1.yaml
+
+vi pvc1.yaml
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: pvc1
+spec:
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: 1000Mi
+
+
+
+   85  vi nfspv-pod.yaml
+
+
+ vi nfspv-pod.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ibm
+  labels:
+    name: www
+spec:
+  containers:
+  - name: www
+    image: nginx
+    ports:
+      - containerPort: 80
+        name: www
+    volumeMounts:
+      - name: nfspv
+        mountPath: /usr/share/nginx/html
+  volumes:
+    - name: nfspv
+      persistentVolumeClaim:
+        claimName: pvc1
+
+
+   86  kubectl create -f pv1.yaml
+   87  kubectl create -f pvc1.yaml
+   88  kubectl get pv
+   89  kubectl get pvc
+   90  kubectl create -f nfspv-pod.yaml
+   91  kubectl describe pod ibm
+   92  vi pvc1.yaml
+   93  kubectl get pods
+   94  kubectl get pods -o wide
+
+   95  cd /ibm_data/
+   96  touch index.html
+   97  echo "data coming from pv1/pvc1" > index.html
+   98  curl 10.44.0.3
+   99  kubectl expose pod ibm --type=NodePort --port=80
+  100  kubectl get svc
+  101  history
+  102  kubectl get pods
+  103  kubectl delete deployment app
+  104  kubectl delete pod ibm
+  105  ls
+
+
+
+  106  vi nfspv-pod.yaml
+  107*
+  108  kubectl create -f nfspv-pod.yaml
+  109  kubectl get pods
+  110  kubectl get pods -o wide
+  111  curl 10.36.0.1
+  112  vi nfspv-pod.yaml
+  113  kubectl delete pod ibm
+  114*
+  115  kubectl get pods -o wide
+  116  clear
+
+
+  117  #create image from source code
+  118  vi nfspv-pod.yaml
+  119  history
+  120  vi nfspv-pod.yaml
+  121  kubectl create -f nfspv-pod.yaml
+  122  kubectl get pods
+  123  kubectl get pods -o wide
+  124  curl 10.36.0.1
+  125  kubectl get pods -o wide
+  126  history
+  127  kubectl describe pod ibm
+  128  kubectl describe pod ibm-frontend
+  129  kubectl get pods -o wide
+  130  history
+  131  kubectl expose pod ibm --type=NodePort --port=80
+  132  kubectl expose pod ibm-frontend --type=NodePort --port=80
+  133  kubectl get pods -o wide
+  134  curl 10.36.0.1:4200
+  135  kubectl expose pod ibm-frontend --type=NodePort --port=4200
+  136  kubectl expose pod ibm-frontend1 --type=NodePort --port=4200
+  137  kubectl expose pod ibm-frontend --type=NodePort --port=4200
+  138  vi nfspv-pod.yaml
+  139  kubectl get pods
+  140  vi nfspv-pod.yaml
+  141  kubectl delete pod ibm-frontend
+  142  kubectl create -f nfspv-pod.yaml
+  143* kubectl expose pod ibm-frontend --type=NodePort --port=80
+  144  kubectl get pods
+  145  vi nfspv-pod.yaml
+  146  kubectl get pods
+  147  kubectl expose pod ibm-frontend --type=NodePort --port=4200
+  148  kubectl get service
+  149  kubectl delete svc ibm-frontend
+  150  kubectl expose pod ibm-frontend --type=NodePort --port=4200
+  151  kubectl get svc
+  152  kubectl exec -it ibm-frontend bash
+  153  kubectl exec -it ibm-frontend sh
+  154  kubectl get pods -o wide
+  155  curl 10.44.0.1
+  156  curl 10.44.0.1:4200
+  157*
+
+------ deploying frontend part----------
+
+  158  kubectl delete svc ibm-frontend
+  159  kubectl create -f nfspv-pod.yaml
+  160  vi nfspv-pod.yaml
+  161  kubectl expose pod ibm-frontend --type=NodePort --port=80
+  162  vi nfspv-pod.yaml
+  163  kubectl apply -f nfspv-pod.yaml
+  164  kubectl delete pod ibm-frontend
+  165  kubectl apply -f nfspv-pod.yaml
+  166  kubectl get svc
+  167  vi nfspv-pod.yaml
+  168  history
+
+
+
+
+  169  vi nfspv-pod.yaml
+
+
+
+
+  170  authentication
+  171  authorisation
+  172  admission control
+  173  authrisation : userid/password/certificates--ssl/tls
+
+  174  authentication : userid/password/certificates--ssl/tls
+  175  authorisation : permissions
+  176  authentication: provided by config file
+
+  177  kubectl config view
+
+  178  creating user
+  179  useradd ibm
+  180  passwd ibm
+  181  cd /home/ibm
+
+  182  openssl genrsa -out ibm.key 2048
+  183  openssl req -new -key ibm.key -out ibm.csr -subj "/CN=ibm"
+  184  ls
+  185  openssl x509 -req -in ibm.csr -CA /etc/kubernetes/pki/ca.crt -CAkey /etc/kubernetes/pki/ca.key -CAcreateserial -out ibm.crt -days 500
+  186  cat ibm.crt
+  187  mkdir .certs
+  188  mv ibm.csr .certs/
+  189 
+  190  mv ibm.crt .certs/
+  191  mv ibm.key .certs/
+  192  cd .certs/
+  193  cd ..
+  194  kubectl config set-credentials ibm --client-certificate=/home/ibm/.certs/ibm.crt --client-key=/home/jean/.certs/ibm.key
+  195  kubectl config view
+  196  kubectl create namespace google
+  197  kubectl get ns
+  198  kubectl create deployment google --image=nginx -n google
+  199  kubectl get deployment
+  200  kubectl get deployment -n google
+  201  kubectl congig set-context ibm-context --cluster=kubernetes --namespace=google --user=ibm
+  202  kubectl config set-context ibm-context --cluster=kubernetes --namespace=google --user=ibm
+  203  kubectl config get-contexts
+  204  kubectl config set-credentials ibm --client-certificate=/home/ibm/.certs/ibm.crt --client-key=/home/ibm/.certs/ibm.key
+
+
+  205  #RBAC -Roll based access control 
+  206  kubectl config view
+  207  kubectl congig set-context ibm-context --cluster=kubernetes --namespace=google --user=ibm
+  208  kubectl config set-context ibm-context --cluster=kubernetes --namespace=google --user=ibm
+  209  kubectl config get-contexts
+  210  #verbs: get list watch delete,,, Subjects: groups,,, Resources: pod, deployment
+  211  #verbs: get list watch delete,,, Subjects: users,groups,,, Resources: pod, deployment
+  212  #rollbinding
+  213  #verbs/actions on resources is roll
+  214  #roll on subjects is called role binding
+
+  215  vi role-dev.yaml
+
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  namespace: google
+  name: developer
+rules:
+- apiGroups: ["", "extensions", "apps"]
+  resources: ["deployments", "replicasets", "pods"]
+  verbs: ["list", "get", "watch", "create", "update", "patch", "delete"]
+
+  216  kubectl apply -f role-dev.yaml
+  217  vi role-dev.yaml
+  218  vi rolebind.yaml
+
+
+
+  219  
+  220  kubectl apply -f rolebind.yaml
+  221  vi rolebind.yaml
+  222  kubectl apply -f rolebind.yaml
+  223  vi rolebind.yaml
+  224  kubectl apply -f rolebind.yaml
+  225  
+  226  kubectl get rolebinding -n google
+  227  kubectl describe rolebinding developer-ole-binding -n google
+  228  kubectl describe rolebinding developer-role-binding -n google
+  229  kubectl --context=ibm-context get pods
+  230  vi role-dev.yaml
+  231  kubectl --context=ibm-context get pods -n google
+  232  kubectl config set-context ibm-context --cluster=kubernetes --namespace=google --user=ibm
+  233  oper" not found
+[root@master ibm]# kubectl config set-context ibm-context --cluster=kubernetes --names
+
+  234  oper" not found
+
+
+  235  ibm]#
+  236  [root@master ibm]#
+  237  ibm]#
+  238  [root@master ibm]#
+
+
+  239  kubectl --context=ibm-context get pods
+  240  kubectl config get-contexts
+  241     google
+  242  *         kubernetes-admin@kubernetes   kubernetes   kubernetes-admin
+  243     google
+  244  *         kubernetes-admin@kubernetes   kubernetes   kubernetes-admin
+  245     google
+  246  *         kubernetes-admin@kubernetes   kubernetes   kubernetes-admin
+  247  kubectl --context=ibm-context get pods
+  248  kubectl apply -f role-dev.yaml
+  249  kubectl apply -f rolebind.yaml
+  250  
+  251  kubectl get rolebinding -n google
+  252  E                     ROLE             AGE
+  253   kubectl describe rolebinding developer-role-binding -n google
+  254  kubectl --context=ibm-context get pods
+  255  kubectl --context=ibm-context get pods -n google
+  256  kubectl create deployment google --image=nginx -n google
+  257  kubectl --context=ibm-context get pods -n google
+  258  kubectl --context=ibm-context run pod1 --image=nginx
+  259  kubectl --context=ibm-context get pods -n google
+  260  kubectl config get-contexts
+  261  history
+
+---------------------------
+
+
+1. vi pv1.yaml
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv1
+spec:
+  capacity:
+    storage: 4Gi
+  accessModes:
+  - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    path: /ibm_data
+    server: 65.2.6.139
+    readOnly: false
+2. vi pvc1.yaml
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: pvc1
+spec:
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: 1000Mi
+3. vi nfspv-pod.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ibm
+  labels:
+    name: www
+spec:
+  containers:
+  - name: www
+    image: nginx
+    ports:
+      - containerPort: 80
+        name: www
+    volumeMounts:
+      - name: nfspv
+        mountPath: /usr/share/nginx/html
+  volumes:
+    - name: nfspv
+      persistentVolumeClaim:
+        claimName: pvc1
+
+
+----------------------------------------
+
+
+
+openshift installation commands
+
+
+
+sudo yum -y update
+sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+sudo yum install -y  docker-ce docker-ce-cli containerd.io
+sudo mkdir /etc/docker /etc/containers
+---------------------------------
+
+
+sudo tee /etc/containers/registries.conf<<EOF
+[registries.insecure]
+registries = ['172.30.0.0/16']
+EOF
+
+sudo tee /etc/docker/daemon.json<<EOF
+{
+   "insecure-registries": [
+     "172.30.0.0/16"
+   ]
+}
+EOF
+
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+systemctl enable docker
+--------------------------------
+
+echo "net.ipv4.ip_forward = 1" | sudo tee -a /etc/sysctl.conf
+
+sudo sysctl -p
+yum install wget -y 
+wget https://github.com/openshift/origin/releases/download/v3.11.0/openshift-origin-client-tools-v3.11.0-0cbc58b-linux-64bit.tar.gz
+tar xvf openshift-origin-client-tools*.tar.gz
+cd openshift-origin-client*/
+sudo cp oc kubectl  /usr/bin/
+oc version
+
+oc cluster up --public-hostname=13.232.81.189
+
+
+
+--------------------------------------------
+
+
+sir installation command openshift
+
+
+
+
+sudo yum -y update
+sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+sudo yum install -y  docker-ce docker-ce-cli containerd.io
+sudo mkdir /etc/docker /etc/containers
+---------------------------------
+sudo tee /etc/containers/registries.conf<<EOF
+[registries.insecure]
+registries = ['172.30.0.0/16']
+EOF
+sudo tee /etc/docker/daemon.json<<EOF
+{
+   "insecure-registries": [
+     "172.30.0.0/16"
+   ]
+}
+EOF
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+systemctl enable docker
+--------------------------------
+echo "net.ipv4.ip_forward = 1" | sudo tee -a /etc/sysctl.conf
+sudo sysctl -p
+yum install wget -y
+wget https://github.com/openshift/origin/releases/download/v3.11.0/openshift-origin-client-tools-v3.11.0-0cbc58b-linux-64bit.tar.gz
+tar xvf openshift-origin-client-tools*.tar.gz
+cd openshift-origin-client*/
+sudo cp oc kubectl  /usr/bin/
+oc version
+oc cluster up --public-hostname=AWS_IP_Public
+
+
+
+-------------------------------------
+
+*** we need to go inside our project ****
+ 
+oc projects
+oc project angularapplication
+
+
+oc adm policy add-scc-to-user anyuid -z default
+
+
+---------
+
+
+
+kind: Service
+apiVersion: v1
+metadata: 
+  name: d1
+  labels: 
+    dish: samosa
+spec: 
+  selector:
+    dish: samosa
+  ports: 
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+
+-------
+
+cmd to make users in openshift
+
+htpasswd -B -b users.htpasswd aditya 123
+
+oc create secret generic ibm-secrets --from-file=/root/users/htpasswd -n openshift-config
+
+-----------------------------
+
+
+
+cli openshift user rbac
+
+
+
+oc new-app --name=shubham docker.io/alpine
+
+oc login --token=4uXPrwZfdMtIJvGPNNfDa_ZVscxpfGSjqORzQBNpe04 --server=https://c101-e.us-south.containers.cloud.ibm.com:30023
+
+oc adm policy add-scc-to-user anyuid -z default
+
+oc new-app --name=shubham docker.io/alpine
+
+oc get pods
+
+oc get pods -n shubham
+
+oc expose svc/shubham
+
+oc get routes
+
+output ->   shubham2-shubham.myopenshiftcluste-147056-1c9bcec27cf8f7d4c31fb46677f0f64e-0000.sao01.containers.appdomain.cloud
+
+
+--------------------
+
+
+https://cloud.ibm.com/docs/openshift?topic=openshift-openshift-cli
+
+
+
+to install oc on linux wget https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.1.0/openshift-client-linux-4.1.0.tar.gz
+
+
+
+
+build -> deployment -> service -> route
+
+
+
+
+
+
+
+ansible prod -m copy -a 'content="Managed by
+Ansible\n" dest=/etc/motd'
+
+
+ansible1 history --------------------
+
+1  sudo -i
+    2  ssh ssh-copy-id root@172.31.33.190
+    3  [centos@ip-172-31-33-209 ~]$
+    4  ssh-copy-id centos@172.31.33.190
+    5  ssh-keygen -t rsa
+    6  ssh-copy-id centos@172.31.33.190
+    7  history
+    8  vi key.pem
+    9  chmod 600 key.pem
+   10  ls
+   11  chmod 600 key.pem
+   12  ssh -i key.pem centos@172.31.32.237
+   13  ssh-copy-id -i key.pem centos@172.31.32.237
+   14  ssh-copy-id centos@172.31.32.237
+   15  cd .ssh
+   16  ls
+   17  cat id_rsa.pub
+   18  bash
+   19  cd ..
+   20  sh ansible2
+   21  ssh ansible2
+   22  ansible ansible prod --list-hosts
+   23  ansible prod --list-hosts
+   24  ansible test --list-hosts
+   25  ansible db --list-hosts
+   26  ansible dev --list-hosts
+   27  ansible dev: children --list-hosts
+   28  ansible dev:children --list-hosts
+   29  ansible prod -m ping
+   30  sudo ansible prod -m ping
+   31  ls
+   32  ansible prod -m command -a hostname
+   33  ansible prod -m command -a ifconfig
+   34  sudo ansible prod -m ping
+   35  ping ansible2
+   36  sudo vi /etc/hosts
+   37  ip a s
+   38  sudo vi /etc/hosts
+   39  ping ansible2
+   40  sudo ansible prod -m ping
+   41  sudo vi /etc/ansible/hosts
+   42  sudo ansible prod -m command -a hostname
+   43  ssh ansible2
+   44  sudo ansible prod -m ping
+   45  sudo vi /etc/ansible/hosts
+   46  sudo ansible prod -m ping
+   47  sudo vi /etc/ansible/hosts
+   48  sudo ansible prod -m ping
+   49  ssh ansible1
+   50  ssh ansible2
+   51  ssh ansible3
+   52  sudo ls /etc/
+   53  sudo vi /etc/hosts
+   54  sudo ansible prod -m ping
+   55  sudo vi /etc/hosts
+   56  sudo ansible prod -m ping
+   57  ssh ansible2
+   58  sudo ansible prod -m ping
+   59  sudo vi /etc/hosts
+   60  sudo vi /etc/ansible/hosts
+   61  sudo vi /etc/hosts
+   62  sudo vi /etc/ansible/hosts
+   63  sudo ansible aditya -m ping
+   64  history
+
+
+--------------------------- Notes provided by sir ---------------------
+
+
+
+
+Why use ad-hoc commands?
+Ad-hoc commands are great for tasks you repeat rarely. For example, if you want to power off all the machines in your lab for Christmas vacation, you could execute a quick one-liner in Ansible without writing a playbook. An ad-hoc command looks like this:
+
+$ ansible [pattern] -m [module] -a "[module options]"
+---------------------------------------------------------
+
+Rebooting servers
+
+$ ansible atlanta -a "/sbin/reboot"
+By default Ansible uses only 5 simultaneous processes. If you have more hosts than the value set for the fork count, 
+Ansible will talk to them, but it will take a little longer. To reboot the [atlanta] servers with 10 parallel forks:
+
+$ ansible atlanta -a "/sbin/reboot" -f 10
+$ ansible atlanta -a "/sbin/reboot" -f 10 -u username
+$ ansible atlanta -a "/sbin/reboot" -f 10 -u username --become [--ask-become-pass]
+
+##Shell Module
+
+$ ansible raleigh -m shell -a 'echo $TERM'
+When running any command with the Ansible ad hoc CLI (as opposed to Playbooks), 
+pay particular attention to shell quoting rules, so the local shell retains the variable and passes it to Ansible. 
+For example, using double rather than single quotes in the above example would evaluate the variable on the box you were on.
+
+
+Managing files : File Module
+
+An ad-hoc task can harness the power of Ansible and SCP to transfer many files to multiple machines in parallel. 
+To transfer a file directly to all servers in the [atlanta] group:
+
+$ ansible atlanta -m copy -a "src=/etc/hosts dest=/tmp/hosts"
+$ ansible webservers -m file -a "dest=/srv/foo/a.txt mode=600"
+$ ansible webservers -m file -a "dest=/srv/foo/b.txt mode=600 owner=mdehaan group=mdehaan"
+
+The file module can also create directories, similar to mkdir -p:
+
+$ ansible webservers -m file -a "dest=/path/to/c mode=755 owner=mdehaan group=mdehaan state=directory"
+
+As well as delete directories (recursively) and delete files:
+
+$ ansible webservers -m file -a "dest=/path/to/c state=absent"
+
+
+Managing packages
+
+You might also use an ad-hoc task to install, update, or remove packages on managed nodes using a package management module 
+like yum. To ensure a package is installed without updating it:
+
+$ ansible webservers -m yum -a "name=screen state=present"
+To ensure a specific version of a package is installed:
+
+$ ansible webservers -m yum -a "name=acme-1.5 state=present"
+
+To ensure a package is at the latest version:
+
+$ ansible webservers -m yum -a "name=acme state=latest"
+
+To ensure a package is not installed:
+
+$ ansible webservers -m yum -a "name=acme state=absent"
+
+Ansible has modules for managing packages under many platforms. If there is no module for your package manager, you can install packages using the command module or create a module for your package manager.
+
+Managing users and groups
+
+You can create, manage, and remove user accounts on your managed nodes with ad-hoc tasks:
+
+$ ansible all -m user -a "name=foo password=<crypted password here>"
+
+$ ansible all -m user -a "name=foo state=absent"
+
+Managing services
+
+Ensure a service is started on all webservers:
+
+$ ansible webservers -m service -a "name=httpd state=started"
+Alternatively, restart a service on all webservers:
+
+$ ansible webservers -m service -a "name=httpd state=restarted"
+Ensure a service is stopped:
+
+$ ansible webservers -m service -a "name=httpd state=stopped"
+Gathering facts
+Facts represent discovered variables about a system. 
+You can use facts to implement conditional execution of tasks but also just to get ad-hoc information about your systems.
+
+To see all facts:
+
+$ ansible all -m setup
+
+
+
+
+
+
+----
+
+
+
+
+
+
+---
+- name: Transfer and execute a script.
+  hosts: server
+  remote_user: test_user
+  sudo: yes
+  tasks:
+     - name: Transfer the script
+       copy: src=test.sh dest=/home/test_user mode=0777
+
+     - name: Execute the script
+       command: sh /home/test_user/test.sh
+	   
+	   
+	 ===============================================
+	 
+
+
+
+
+
+-------
+
+
+
+
+ansible localhost --list-hosts
+ansible myself --list-hosts
+ansible all --list-hosts
+ansible all -m ping
+## ansible host-pattern -m module [-a 'module arguments'] [-i inventory]
+ansible-doc -l ## list all modules
+
+ansible-doc ping ## Documentation for ping command
+ansible-doc copy ## Documentation for copy command
+
+User Module
+
+ansible -m user -a 'name=newbie uid=4000 state=present' all ### add user in all servers
+ansible -m user -a 'name=newbie uid=4000 state=present' 192.168.0.104 
+
+
+###Most modules are idempotent, which means that they can be run safely multiple times, and if the
+system is already in the correct state, they will do nothing. For example, we can run the previous
+ad hoc command again and we should see it report no changes:
+
+ansible -m user -a 'name=newbie uid=4000 state=present' servera.lab.example.com ## monitor the change
+
+Command Module 
+
+ansible all -m command -a /usr/bin/hostname
+ansible mymanagedhosts -m command -a /usr/bin/hostname -o
+
+Shell Module
+
+ansible localhost -m shell -a set
+ansible localhost -m command -a 'id'
+ansible localhost -m command -a 'id' -u devops
+ansible localhost -m command -a 'cat /etc/motd' -u devops
+
+##Copy Contents to File
+ansible localhost -m copy -a 'content="Managed by Ansible\n" dest=/etc/motd' -u devops
+ansible localhost -m copy -a 'content="Managed by Ansible\n" dest=/etc/motd' -u devops --become ## It gives root privileges
+ansible everyone -m copy -a 'content="Managed by Ansible\n" dest=/etc/motd' -u devops --become
+ansible everyone -m command -a 'cat /etc/motd' -u devops
+===============================================================================
+
+Writing PlayBooks
+
+ansible -m user -a "name=newbie uid=4000 state=present servera.lab.example.com
+ansible all -m command -a 'tail -1 /etc/passwd'
+
+ansible-playbook --syntax-check webserver.yml
+ansible-playbook --C  webserver.yml
+
+[root@master playbooks]# cat simple.yaml
+---
+- name: Vice President
+  hosts: all
+  tasks:
+  - name: User Admin
+    user:
+      name: admin1
+      uid: 4001
+      state: present
+================================================
+[root@master playbooks]# cat enable_services.yaml
+---
+- name: web server is enabled
+  hosts: 192.168.0.106
+  tasks:
+  - name: http service enabled
+    service:
+      name: httpd
+      enabled: true
+  - name: NTP server is enabled
+    service:
+      name: chronyd
+      enabled: true
+  - name: Postfix is enabled
+    service:
+      name: postfix
+      enabled: true
+[root@master playbooks]#
+
+=================================================
+[root@master playbooks]# cat website.yaml
+---
+- name: play to setup web server
+  hosts: 192.168.0.104
+  tasks:
+  - name: latest httpd version installed
+    yum:
+      name: httpd
+      state: latest
+...
+[root@master playbooks]#
+
+--------------------------------------------------
+[root@master playbooks]# cat webserver1.yaml
+---
+- name: Install and start Apache HTTPD
+  hosts: 192.168.0.106
+  tasks:
+  - name: httpd package is present
+    yum:
+      name: httpd
+      state: present
+  - name: correct index.html is present
+    copy:
+      src: files/index.html
+      dest: /var/www/html/index.html
+  - name: httpd is started
+    service:
+      name: httpd
+      state: started
+      enabled: true
+[root@master playbooks]#
+
+=========================================================
+
+---
+- name: Enable intranet services
+hosts: servera.lab.example.com
+become: yes
+tasks:
+- name: latest version of httpd and firewalld installed
+yum:
+name:
+- httpd
+- firewalld
+state: latest
+- name: firewalld enabled and running
+service:
+name: firewalld
+enabled: true
+state: started
+- name: firewalld permits http service
+firewalld:
+service: http
+permanent: true
+state: enabled
+immediate: yes
+- name: httpd enabled and running
+service:
+name: httpd
+enabled: true
+state: started
+- name: test html page is installed
+copy:
+content: "Welcome to the example.com intranet!\n"
+dest: /var/www/html/index.html
+- name: Test intranet web server
+hosts: localhost
+become: no
+tasks:
+- name: connect to intranet web server
+uri:
+url: http://servera.lab.example.com
+status_code: 200
+
+===============================================
+
+[student@workstation imp-lab]$ cat internet.yml
+---
+- name: Enable internet services
+hosts: serverb.lab.example.com
+become: yes
+tasks:
+- name: latest version of all required packages installed
+yum:
+name:
+- firewalld
+- httpd
+- mariadb-server
+- php
+- php-mysql
+state: latest
+- name: firewalld enabled and running
+service:
+name: firewalld
+enabled: true
+state: started
+- name: firewalld permits http service
+firewalld:
+service: http
+permanent: true
+state: enabled
+immediate: yes
+- name: httpd enabled and running
+service:
+name: httpd
+enabled: true
+state: started
+- name: mariadb enabled and running
+service:
+name: mariadb
+enabled: true
+state: started
+- name: test php page is installed
+get_url:
+url: "http://materials.example.com/grading/var/www/html/index.php"
+dest: /var/www/html/index.php
+mode: 0644
+- name: Test internet web server
+hosts: localhost
+become: no
+tasks:
+- name: connect to internet web server
+uri:
+url: http://serverb.lab.example.com
+status_code: 200
+
+===========================================================
+
+
+---
+ - hosts: all
+   tasks:
+   - name: hostname
+     debug:
+       var=ansible_hostname
+
+   - name: date and time
+     vars:
+      msg: |
+       Date: {{ ansible_date_time.date }}
+       Timezone: {{ ansible_date_time.tz }}
+     debug:
+      msg: "{{ msg.split('\n') }}"
+
+   - name: network info
+     vars:
+      msg: |
+       All Interface List: {{ ansible_interfaces }}
+       All IP: {{ ansible_all_ipv4_addresses }}
+       Gateway: {{ ansible_default_ipv4.gateway }}
+       Eth0 MAC: {{ ansible_eth0.macaddress }}
+     debug:
+      msg: "{{ msg.split('\n') }}"
+
+   - name: OS and Kernel info
+     vars:
+      msg: |
+       Distribution: {{ ansible_distribution }}
+       Release: {{ ansible_distribution_release }}
+       Distribution Version: {{ ansible_distribution_version }}
+       Kernel: {{ ansible_kernel }}
+       Architecture: {{ ansible_architecture }}
+     debug:
+      msg: "{{ msg.split('\n') }}"
+
+   - name: HW info
+     vars:
+      msg: |
+       CPU: {{ ansible_processor }}
+       CPU Core: {{ ansible_processor_cores }}
+       RAM: {{ ansible_memtotal_mb }}
+       SWAP: {{ ansible_memory_mb.swap.total }}
+     debug:
+
+      msg: "{{ msg.split('\n') }}"
+
+
+==================================================================
+
+
+
+------------
+
+
+
+
+
+Automation with Ansible
+--Version 2.7
+--DO407
+CHapter 1 : Introduction 
+			Concepts and Installation
+Ansible ( Similar tools are Puupet , Chef , Saltstack)
+Ansible Engine 2.7 -- CLI -- It is command line 
+				--250 Nodes
+				--CLI
+				--No support , need to take subscription for same.
+				-- Agentless Configuration ( No Configuration at client side required )
+				-- Push Architecture , however pull configuration can be setup
+				-- Simple ( YAML) Yet another Markup language
+				-- No Seperator or delimitor .. works on spaces
+				-- SSH 
+				---written in Python 
+
+Ansible Server ( TOwer ) -- DO409
+				
+		--Enterprise Product
+		--Log Aggregation
+		--System Tracking
+		--Portabilty
+		--Web Dashboard
+			--RBAC
+		-- Job Schedular
+	
+
+Ansible Server Subscription : Standard and Premium 
+
+			
+=====================================================
+
+
+For Ansible Pricing details,https://www.ansible.com/products/tower/pricing
+
+To download ansible engine,   https://releases.ansible.com/ansible/
+
+
+To download ansible tower,        https://releases.ansible.com/ansible-tower/
+
+AWX -- Ansible Works --Community Product
+
+
+=========================================
+
+Prerequisite :
+COntrol Node : ( Ansible Server )
+
+			--- SSH
+			-- Python 2.7 or later
+			-- Selinux in targeted mode if it is enabled
+			-- FOr Windows -- Pywinrm plugin 
+			-- Paramiko plugin ( For Persistent Connection) -- For parallel Connectivity with clients
+FOr Managed Hosts : 
+					-- SSH
+					-- Python 2.4 with simple-jason or later
+					-- Targeted policy if selinux in enabled mode	
+					-- for windows client -- >NET FRamework
+										-- powershell 3.0 or later				
+										--winrm plugin
+=========
+
+=======================================================
+Installation of Ansible 
+
+# yum list ansible openssh python
+# yum install ansible
+# ansible --version
+
+
+================================
+AWX tar file:   https://github.com/ansible/awx
+AWX RPM:     https://copr.fedorainfracloud.org/coprs/mrmeee/awx/repo/epel-7/mrmeee-awx-epel-7.repo
+For AWX Installation:       https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-docker-on-centos/              https://www.howtoforge.com/tutorial/centos-ansible-awx-installation/
+For AWX Installation:       https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-docker-on-centos/              https://www.howtoforge.com/tutorial/centos-ansible-awx-installation/
+
+=========================================
+
+COnfiguring inventory file
+COnfiguring  configuration file
+		---priorities 
+=========================================
+Configuration of inventory file
+
+To view default configuration files of ansible 
+
+# ansible --version
+# Default configuration inventory file 
+# ls -l /etc/ansible/hosts
+# add hosts entry to this file
+ 192.168.0.[1:254]
+ 10.0.0.[1:254].[1:254]
+ [dev]
+ servera.labs.example.com
+ servera.labs.example.com
+ [prod]
+ servera.labs.example.com
+ servera.labs.example.com
+ [web:children]
+ dev
+ prod
+syntax
+
+ansible pattern command
+ 
+# ansible all --list-hosts
+# ansible prod --list-hosts
+# ansible dev --list-hosts
+# ansible ungrouped --list-hosts
+# ansible web --list-all
+# ansible all --list-hosts -i /tmp/inventory
+
+# Configuration File /etc/ansible/ansible.cfg
+Setting up configuration file in local directory
+#touch /var/ansible.cfg
+# ansible --version
+
+Setting up configuration file in .bashrc file of user
+
+#touch /usr/ansible.cfg
+#vim ~/.bashrc
+#export ANSIBLE_CONFIG=/usr/ansible.cfg
+#source ~/.bashrc
+#ansible --version
+
+### if locally ansible.cfg file is not configured in directory and .bashrc file for
+individual user then default /etc/ansible/ansible.cfg is considered by ansible
+
+#### Configuration of ansible.cfg to deploy ansible modules
+
+Sections of ansible.cfg file 
+# cat /etc/ansible/ansible.cfg | grep ^ [[] 
+[defaults]
+[privilege_escalation] -- contains settings for defining how operations that
+require escalated privileges are executed on managed hosts.
+[paramiko_connection]
+[ssh_connection]
+[accelerate]
+[selinux]
+[galaxy] --section is also available for defining parameters
+related to Ansible Galaxy
+
+
+Configuring Connections
+
+Ansible needs to know how to communicate with its managed hosts. 
+One of the most common reasons to change the configuration file is in order to control what methods and users Ansible will use to administer managed hosts. 
+Some of the information needed includes:
+
+• Where the inventory is that lists the managed hosts and host groups
+• Which connection protocol to use to communicate with the managed hosts 
+(by default, SSH), and whether a non-standard network port is needed to connect
+ to the server
+• Which remote user to use on the managed hosts; this could be root or it could be an
+unprivileged user
+• If the remote user is unprivileged, Ansible needs to know whether it should 
+try to escalate privileges to root and how to do it (for example, by using sudo)
+• Whether or not to prompt for an SSH password or sudo password to log in or
+ gain privileges
+ 
+ # Important points while configuring ansible.cfg
+ 1. section [defaults]
+	inventory = /etc/ansible/ansible.cfg
+	remote_user = devops ( If not specified , ansible considers local user)
+	ask_pass = true ( if key based authentication is not set )
+	
+	[privilege_escalation]
+	become = false  --- to enable privilege_escalation section set it to true
+	become_method = sudo
+	become_user = root
+	become_ask_method = true
+	
+ 
+privilege_escalation section parameters :
+
+remote_user : The remote user account used to establish connections to managed
+hosts.
+ask_pass :  Prompt for a password to use when connecting as the remote user.
+become :  Enable or disable privilege escalation for operations on managed
+hosts.
+become_method : The privilege escalation method to use on managed hosts.
+become_user : The user account to escalate privileges to on managed hosts.
+become_ask_pass : Defines whether privilege escalation on managed hosts should prompt
+for a password.
+
+
+Chapter 3
+
+Implementating Playbooks 
+
+		How to create YAML syntax
+		
+		Online YAML syntax validator:             http://www.yamllint.com/
+		
+		
+		
+		
+		==================================
+		
+		https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html
+		https://github.com/ansible/ansible/tree/devel/contrib/inventory
+		
+		https://galaxy.ansible.com/
+		
+		sindhu@redhat.com
+		7760653627
+
+http://releases.ansible.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
