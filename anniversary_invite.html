@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aditya & Divya — 1st Anniversary Dinner</title>
+<meta property="og:title" content="Aditya & Divya — 1st Anniversary 🌸">
+<meta property="og:description" content="Join us for a dinner celebration · Saturday, 18 April 2026 · 8 PM · Barbeque Nation, Gurugram">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,600&family=Great+Vibes&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --deep:#5c2040; --rose:#b86278; --blush:#f7eaf0; --cream:#fdf8f5;
+  --gold:#c8a46e; --gold2:#e6d09a; --sage:#7e9482; --ink:#3d1a2a; --muted:#8a6070;
+}
+html { scroll-behavior:smooth; }
+body {
+  min-height:100vh; background:#16090f;
+  display:flex; align-items:center; justify-content:center;
+  padding:32px 16px 48px; font-family:'Cormorant Garamond',serif; overflow-x:hidden;
+}
+body::before {
+  content:''; position:fixed; inset:0; pointer-events:none;
+  background:
+    radial-gradient(ellipse 55% 40% at 15% 20%,rgba(184,98,120,.12),transparent 60%),
+    radial-gradient(ellipse 45% 35% at 85% 80%,rgba(200,164,110,.10),transparent 60%);
+}
+.wrap {
+  position:relative; width:460px; max-width:100%;
+  border-radius:26px; padding:2px;
+  background:linear-gradient(145deg,var(--gold),var(--rose),var(--deep),var(--gold2),var(--gold));
+  background-size:300% 300%;
+  animation:borderShimmer 7s ease infinite, riseIn 1.1s cubic-bezier(.22,1,.36,1) both;
+  box-shadow:0 8px 40px rgba(92,32,64,.35),0 2px 8px rgba(0,0,0,.4),0 0 0 1px rgba(200,164,110,.2);
+}
+@keyframes borderShimmer { 0%,100%{background-position:0% 50%} 50%{background-position:100% 50%} }
+@keyframes riseIn { from{opacity:0;transform:translateY(36px) scale(.97)} to{opacity:1;transform:translateY(0) scale(1)} }
+.card { border-radius:24px; overflow:hidden; background:var(--cream); position:relative; }
+.card-bg {
+  position:absolute; inset:0; pointer-events:none;
+  background:
+    radial-gradient(ellipse 70% 50% at 10% 5%,rgba(184,98,120,.14),transparent 55%),
+    radial-gradient(ellipse 55% 45% at 92% 96%,rgba(200,164,110,.16),transparent 55%),
+    radial-gradient(ellipse 40% 30% at 85% 8%,rgba(92,32,64,.07),transparent 50%),
+    linear-gradient(160deg,#fff9fc 0%,#f9eff5 45%,#fdf5f0 100%);
+}
+.card-bg::after {
+  content:''; position:absolute; inset:0; opacity:.03; mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='f'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");
+  background-size:200px;
+}
+.floral { position:absolute; pointer-events:none; }
+.floral-tl { top:-2px; left:-2px; width:200px; }
+.floral-br { bottom:-2px; right:-2px; width:190px; transform:rotate(180deg); }
+.body { position:relative; z-index:2; padding:50px 40px 44px; text-align:center; }
+.eyebrow {
+  font-family:'Jost',sans-serif; font-weight:400; font-size:9.5px;
+  letter-spacing:4px; text-transform:uppercase; color:var(--deep);
+  margin-bottom:14px; animation:fadeDrift .7s .3s both;
+}
+.rule { display:flex; align-items:center; justify-content:center; gap:10px; margin-bottom:22px; animation:fadeDrift .7s .4s both; }
+.rule-line { flex:1; height:1px; max-width:70px; background:linear-gradient(to right,transparent,var(--gold)); }
+.rule-line.r { background:linear-gradient(to left,transparent,var(--gold)); }
+.rule-diamond { color:var(--gold); font-size:11px; letter-spacing:4px; }
+.names { animation:fadeDrift .9s .5s both; margin-bottom:4px; }
+.name {
+  display:block; font-family:'Great Vibes',cursive; font-size:96px; line-height:.88; color:var(--deep);
+  text-shadow:0 2px 0 rgba(200,164,110,.6),0 4px 28px rgba(92,32,64,.22),0 0 2px rgba(92,32,64,.15);
+  -webkit-text-stroke: .5px rgba(92,32,64,.15);
+}
+.amp {
+  display:block; font-family:'Great Vibes',cursive; font-size:52px; line-height:1.1; color:var(--gold);
+  filter:drop-shadow(0 2px 6px rgba(200,164,110,.5));
+  text-shadow: 0 1px 0 rgba(255,255,255,.4);
+}
+.tag {
+  display:inline-flex; align-items:center; gap:10px;
+  background:linear-gradient(135deg,var(--deep) 0%,#8b3560 100%);
+  color:var(--gold2); font-family:'Jost',sans-serif; font-weight:400;
+  font-size:8.5px; letter-spacing:5px; text-transform:uppercase;
+  padding:10px 24px 9px; border-radius:50px; margin:22px auto 5px;
+  animation:fadeDrift .7s .7s both; box-shadow:0 2px 16px rgba(92,32,64,.25);
+}
+.tag-dot { width:3px; height:3px; border-radius:50%; background:var(--gold); opacity:.7; }
+.sub {
+  font-family:'Jost',sans-serif; font-weight:300; font-size:9.5px;
+  letter-spacing:5px; text-transform:uppercase; color:var(--rose);
+  margin-bottom:28px; animation:fadeDrift .7s .8s both;
+}
+.fleuron { color:var(--gold); font-size:13px; letter-spacing:6px; margin-bottom:22px; animation:fadeDrift .7s .9s both; opacity:.85; }
+.date-box {
+  position:relative; border:1px solid rgba(200,164,110,.28); border-radius:18px;
+  padding:22px 24px 18px; margin-bottom:26px; animation:fadeDrift .8s 1s both;
+  background:linear-gradient(135deg,rgba(255,255,255,.7) 0%,rgba(253,245,240,.4) 100%);
+  backdrop-filter:blur(4px); box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 2px 12px rgba(92,32,64,.06);
+}
+.date-box::before,.date-box::after { content:''; position:absolute; width:14px; height:14px; border-color:var(--gold); border-style:solid; opacity:.5; }
+.date-box::before { top:8px; left:8px; border-width:1px 0 0 1px; }
+.date-box::after  { bottom:8px; right:8px; border-width:0 1px 1px 0; }
+.month { font-family:'Jost',sans-serif; font-weight:400; font-size:9px; letter-spacing:6px; text-transform:uppercase; color:var(--rose); margin-bottom:6px; }
+.date-row { display:flex; align-items:center; justify-content:center; gap:18px; }
+.date-side { font-family:'Jost',sans-serif; font-weight:300; font-size:9px; letter-spacing:3px; text-transform:uppercase; color:var(--ink); line-height:1.4; }
+.date-num { font-family:'Cormorant Garamond',serif; font-weight:600; font-size:84px; color:var(--deep); line-height:1; letter-spacing:-2px; text-shadow:0 2px 16px rgba(92,32,64,.18); }
+.date-sep { width:1px; height:38px; background:linear-gradient(to bottom,transparent,var(--gold),transparent); opacity:.5; }
+.year-label { font-family:'Jost',sans-serif; font-weight:300; font-size:9.5px; letter-spacing:6px; color:var(--gold); margin-top:6px; }
+.venue { animation:fadeDrift .8s 1.1s both; margin-bottom:24px; }
+.venue-name { font-family:'Cormorant Garamond',serif; font-weight:600; font-size:21px; color:var(--deep); letter-spacing:.5px; line-height:1.2; }
+.venue-addr { font-family:'Jost',sans-serif; font-weight:300; font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--ink); line-height:1.9; margin-top:5px; opacity:.85; }
+.rsvp {
+  display:block; text-decoration:none;
+  background:linear-gradient(135deg,var(--deep) 0%,#943564 100%);
+  border-radius:14px; padding:16px 28px 15px;
+  animation:fadeDrift .8s 1.2s both; position:relative; overflow:hidden;
+  box-shadow:0 4px 20px rgba(92,32,64,.30);
+  cursor:pointer; transition:transform .15s ease, box-shadow .15s ease;
+}
+.rsvp:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(92,32,64,.40); }
+.rsvp:active { transform:scale(.97); box-shadow:0 2px 10px rgba(92,32,64,.30); }
+.rsvp::before { content:''; position:absolute; top:0; left:20%; right:20%; height:1px; background:linear-gradient(to right,transparent,rgba(200,164,110,.55),transparent); }
+.rsvp::after  { content:''; position:absolute; bottom:0; left:20%; right:20%; height:1px; background:linear-gradient(to right,transparent,rgba(200,164,110,.3),transparent); }
+.rsvp-label { font-family:'Jost',sans-serif; font-weight:300; font-size:8.5px; letter-spacing:4px; text-transform:uppercase; color:rgba(230,208,154,.85); margin-bottom:3px; }
+.rsvp-phone { font-family:'Jost',sans-serif; font-weight:400; font-size:13.5px; letter-spacing:1.5px; color:rgba(255,255,255,.95); margin-top:4px; }
+.rsvp-tap { font-family:'Jost',sans-serif; font-weight:200; font-size:7.5px; letter-spacing:3px; text-transform:uppercase; color:rgba(230,208,154,.55); margin-top:6px; }
+.footer-sig { margin-top:20px; animation:fadeDrift .7s 1.3s both; }
+.footer-rule { display:flex; align-items:center; gap:10px; justify-content:center; margin-bottom:8px; }
+.footer-rule span { height:1px; width:40px; background:linear-gradient(to right,transparent,rgba(200,164,110,.4)); }
+.footer-rule span:last-child { background:linear-gradient(to left,transparent,rgba(200,164,110,.4)); }
+.footer-rule i { color:var(--gold); font-style:normal; font-size:8px; letter-spacing:3px; opacity:.7; }
+.footer-note { font-family:'Jost',sans-serif; font-weight:200; font-size:8px; letter-spacing:2px; color:var(--muted); text-transform:uppercase; opacity:.7; }
+.petal { position:fixed; top:-30px; font-size:13px; animation:petalFall linear infinite; pointer-events:none; z-index:0; opacity:0; filter:blur(.4px); }
+@keyframes petalFall {
+  0%{opacity:0;transform:translateY(-10px) rotate(0deg) translateX(0)}
+  8%{opacity:.55} 88%{opacity:.35}
+  100%{opacity:0;transform:translateY(100vh) rotate(420deg) translateX(30px)}
+}
+.p1{left:5%;animation-duration:8s;animation-delay:0s}
+.p2{left:18%;animation-duration:11s;animation-delay:2.5s}
+.p3{left:38%;animation-duration:9s;animation-delay:1s}
+.p4{left:62%;animation-duration:12s;animation-delay:3.5s}
+.p5{left:80%;animation-duration:10s;animation-delay:1.8s}
+.p6{left:91%;animation-duration:7s;animation-delay:4.5s}
+@keyframes fadeDrift { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+@media(max-width:480px){
+  .name{font-size:68px} .amp{font-size:36px} .date-num{font-size:64px} .body{padding:40px 28px 36px}
+}
+</style>
+</head>
+<body>
+<div class="petal p1">🌸</div><div class="petal p2">🌺</div><div class="petal p3">🌸</div>
+<div class="petal p4">🌷</div><div class="petal p5">🌸</div><div class="petal p6">🌺</div>
+
+<div class="wrap">
+  <div class="card">
+    <div class="card-bg"></div>
+
+    <svg class="floral floral-tl" viewBox="0 0 210 210" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="55" cy="55" r="50" fill="rgba(184,98,120,.10)"/>
+      <circle cx="90" cy="30" r="30" fill="rgba(200,164,110,.09)"/>
+      <circle cx="30" cy="95" r="35" fill="rgba(184,98,120,.08)"/>
+      <ellipse cx="130" cy="25" rx="28" ry="10" fill="rgba(126,148,130,.28)" transform="rotate(-25 130 25)"/>
+      <ellipse cx="25" cy="128" rx="26" ry="9" fill="rgba(100,130,105,.22)" transform="rotate(65 25 128)"/>
+      <ellipse cx="148" cy="52" rx="22" ry="8" fill="rgba(126,148,130,.22)" transform="rotate(-45 148 52)"/>
+      <ellipse cx="52" cy="148" rx="20" ry="7" fill="rgba(100,130,105,.18)" transform="rotate(20 52 148)"/>
+      <line x1="62" y1="62" x2="130" y2="25" stroke="rgba(126,148,130,.20)" stroke-width="1.5"/>
+      <line x1="62" y1="62" x2="25" y2="128" stroke="rgba(126,148,130,.18)" stroke-width="1.5"/>
+      <ellipse cx="58" cy="42" rx="20" ry="11" fill="rgba(196,130,155,.38)" transform="rotate(-35 58 42)"/>
+      <ellipse cx="42" cy="58" rx="20" ry="11" fill="rgba(196,130,155,.33)" transform="rotate(55 42 58)"/>
+      <ellipse cx="76" cy="52" rx="18" ry="10" fill="rgba(196,130,155,.30)" transform="rotate(-75 76 52)"/>
+      <ellipse cx="52" cy="76" rx="18" ry="10" fill="rgba(196,130,155,.28)" transform="rotate(15 52 76)"/>
+      <ellipse cx="68" cy="68" rx="14" ry="8" fill="rgba(184,98,120,.40)" transform="rotate(-55 68 68)"/>
+      <circle cx="62" cy="62" r="13" fill="rgba(184,98,120,.50)"/>
+      <circle cx="62" cy="62" r="6" fill="rgba(210,140,165,.60)"/>
+      <ellipse cx="118" cy="92" rx="13" ry="7" fill="rgba(230,185,205,.42)" transform="rotate(-15 118 92)"/>
+      <ellipse cx="104" cy="102" rx="13" ry="7" fill="rgba(230,185,205,.36)" transform="rotate(55 104 102)"/>
+      <circle cx="112" cy="96" r="9" fill="rgba(220,160,185,.52)"/>
+      <circle cx="112" cy="96" r="4" fill="rgba(240,200,215,.65)"/>
+      <ellipse cx="92" cy="118" rx="8" ry="5" fill="rgba(196,130,155,.45)" transform="rotate(30 92 118)"/>
+      <ellipse cx="92" cy="118" rx="5" ry="3" fill="rgba(220,160,185,.55)" transform="rotate(30 92 118)"/>
+    </svg>
+
+    <svg class="floral floral-br" viewBox="0 0 210 210" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="55" cy="55" r="50" fill="rgba(184,98,120,.10)"/>
+      <circle cx="90" cy="30" r="30" fill="rgba(200,164,110,.09)"/>
+      <circle cx="30" cy="95" r="35" fill="rgba(184,98,120,.08)"/>
+      <ellipse cx="130" cy="25" rx="28" ry="10" fill="rgba(126,148,130,.28)" transform="rotate(-25 130 25)"/>
+      <ellipse cx="25" cy="128" rx="26" ry="9" fill="rgba(100,130,105,.22)" transform="rotate(65 25 128)"/>
+      <ellipse cx="148" cy="52" rx="22" ry="8" fill="rgba(126,148,130,.22)" transform="rotate(-45 148 52)"/>
+      <ellipse cx="52" cy="148" rx="20" ry="7" fill="rgba(100,130,105,.18)" transform="rotate(20 52 148)"/>
+      <line x1="62" y1="62" x2="130" y2="25" stroke="rgba(126,148,130,.20)" stroke-width="1.5"/>
+      <line x1="62" y1="62" x2="25" y2="128" stroke="rgba(126,148,130,.18)" stroke-width="1.5"/>
+      <ellipse cx="58" cy="42" rx="20" ry="11" fill="rgba(196,130,155,.38)" transform="rotate(-35 58 42)"/>
+      <ellipse cx="42" cy="58" rx="20" ry="11" fill="rgba(196,130,155,.33)" transform="rotate(55 42 58)"/>
+      <ellipse cx="76" cy="52" rx="18" ry="10" fill="rgba(196,130,155,.30)" transform="rotate(-75 76 52)"/>
+      <ellipse cx="52" cy="76" rx="18" ry="10" fill="rgba(196,130,155,.28)" transform="rotate(15 52 76)"/>
+      <ellipse cx="68" cy="68" rx="14" ry="8" fill="rgba(184,98,120,.40)" transform="rotate(-55 68 68)"/>
+      <circle cx="62" cy="62" r="13" fill="rgba(184,98,120,.50)"/>
+      <circle cx="62" cy="62" r="6" fill="rgba(210,140,165,.60)"/>
+      <ellipse cx="118" cy="92" rx="13" ry="7" fill="rgba(230,185,205,.42)" transform="rotate(-15 118 92)"/>
+      <ellipse cx="104" cy="102" rx="13" ry="7" fill="rgba(230,185,205,.36)" transform="rotate(55 104 102)"/>
+      <circle cx="112" cy="96" r="9" fill="rgba(220,160,185,.52)"/>
+      <circle cx="112" cy="96" r="4" fill="rgba(240,200,215,.65)"/>
+      <ellipse cx="92" cy="118" rx="8" ry="5" fill="rgba(196,130,155,.45)" transform="rotate(30 92 118)"/>
+      <ellipse cx="92" cy="118" rx="5" ry="3" fill="rgba(220,160,185,.55)" transform="rotate(30 92 118)"/>
+    </svg>
+
+    <div class="body">
+      <p class="eyebrow">You are cordially invited to join us for</p>
+      <div class="rule">
+        <span class="rule-line"></span>
+        <span class="rule-diamond">✦ ✦ ✦</span>
+        <span class="rule-line r"></span>
+      </div>
+      <div class="names">
+        <span class="name">Aditya</span>
+        <span class="amp">&amp;</span>
+        <span class="name">Divya</span>
+      </div>
+      <div class="tag"><span class="tag-dot"></span>1st Anniversary<span class="tag-dot"></span></div>
+      <p class="sub">Dinner Celebration</p>
+      <p class="fleuron">✦ &nbsp; ❧ &nbsp; ✦</p>
+      <div class="date-box">
+        <p class="month">April</p>
+        <div class="date-row">
+          <div class="date-side">Saturday</div>
+          <div class="date-sep"></div>
+          <div class="date-num">18</div>
+          <div class="date-sep"></div>
+          <div class="date-side">8&thinsp;PM<br>onwards</div>
+        </div>
+        <p class="year-label">· &nbsp; 2 0 2 6 &nbsp; ·</p>
+      </div>
+      <div class="venue">
+        <p class="venue-name">Barbeque Nation</p>
+        <p class="venue-addr">1st Floor, SS Omnia · Badha<br>Sector 86, Gurugram, Haryana 122012</p>
+      </div>
+      <a class="rsvp" href="tel:+917453069455">
+        <p class="rsvp-label">Kindly RSVP before 10th April</p>
+        <p class="rsvp-phone">📞 &nbsp;+91 – 7453069455</p>
+        <p class="rsvp-tap">Tap to call</p>
+      </a>
+      <div class="footer-sig">
+        <div class="footer-rule">
+          <span></span><i>✦ ✦ ✦</i><span></span>
+        </div>
+        <p class="footer-note">With love &amp; joy · Aditya &amp; Divya</p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
